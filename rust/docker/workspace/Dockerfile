@@ -13,4 +13,4 @@ RUN ["/bin/fish", "-c", "set -U fish_user_paths $fish_user_paths $HOME/.cargo/bi
 COPY config.fish /root/.config/fish/
 COPY ./.vimrc /root/
 WORKDIR /root/workspace
-EXPOSE 9000
+EXPOSE 8080

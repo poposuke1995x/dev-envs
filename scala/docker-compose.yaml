@@ -2,7 +2,7 @@ version: "3"
 
 services:
   workspace:
-    container_name: workspace
+    container_name: scala_workspace
     build:
       context: ./docker/workspace
       dockerfile: Dockerfile
@@ -13,7 +13,7 @@ services:
       - $HOME/workspace/scala_dev:/root/workspace
   db:
     image: postgres:latest
-    container_name: postgres
+    container_name: scala_postgres
     ports:
       - 5432:5432
     volumes:

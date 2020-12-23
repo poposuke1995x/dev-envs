@@ -10,7 +10,7 @@ services:
       - 8080:8080
     tty: true
     volumes:
-      - $HOME/workspace/rust_dev:/root/workspace
+      - .:/root/workspace
   db:
     image: postgres:latest
     container_name: rust_postgres

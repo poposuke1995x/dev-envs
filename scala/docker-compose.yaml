@@ -10,7 +10,7 @@ services:
       - 9000:9000
     tty: true
     volumes:
-      - $PWD:/root/workspace
+      - .:/root/workspace
   db:
     image: postgres:latest
     container_name: scala_postgres

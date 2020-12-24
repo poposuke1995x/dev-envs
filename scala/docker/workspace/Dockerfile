@@ -1,9 +1,10 @@
-FROM alpine:latest
+FROM ubuntu:20.04
 
 ENV TZ Asia/Tokyo
-RUN apk update && \
-    apk upgrade && \
-    apk add git fish fzf vim curl zip unzip bash
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    apt-get install -y git fish fzf vim curl zip unzip locales-all 
 RUN curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 RUN ["/usr/bin/fish", "-c", "fisher install jethrokuan/fzf"]
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
